@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './assets/css/components.css'; 
-import Img from './assets/img/1x/banner.png';
-import {StudentEntry} from './components/StudentEntry'
+import Img from './assets/img/png/home/banner.png'
 
 class Home extends Component {
     
@@ -12,7 +11,6 @@ class Home extends Component {
                 <img width="700" src={Img} alt="E-schola" />
                 toto
                 </div>
-                <StudentEntry/> 
            </div>
         )
     }

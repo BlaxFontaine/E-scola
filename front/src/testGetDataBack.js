@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './assets/css/components.css'; 
-import Img from './assets/img/1x/banner.png';
+import Img from './assets/img/png/home/banner.png'
 import Users from './components/users.js';
 
 class testGetDataFromBack extends Component {
