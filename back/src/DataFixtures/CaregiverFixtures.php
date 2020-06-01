@@ -19,15 +19,16 @@ class CaregiverFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $caregiver = new Caregiver();
-        $caregiver->setFirstname('Beyonce');
-        $caregiver->setLastname('Knowles');
-        $caregiver->setEmail('beyonce@beyonce.com');
+        $caregiver->setFirstname('Emmanuel');
+        $caregiver->setLastname('Kant');
+        $caregiver->setEmail('kant@kant.fr');
+      
 
         $manager->persist($caregiver);
 
         $caregiver->setPassword($this->passwordEncoder->encodePassword(
             $caregiver,
-            'the_new_password'
+            'kant'
         ));
 
         $manager->flush();
