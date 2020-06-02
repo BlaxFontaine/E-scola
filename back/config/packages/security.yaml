@@ -6,16 +6,17 @@ security:
             algorithm: auto
         App\Entity\Teacher:
             algorithm: auto
-
+        App\Entity\User:
+            algorithm: bcrypt
 
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
-        app_user_provider:
+        your_db_provider:
             entity:
-                class: App\Entity\Teacher
-                property: email
+                class: App\Entity\User
+                property: apiKey
         # used to reload user from session & other features (e.g. switch_user)
         # used to reload user from session & other features (e.g. switch_user)
     firewalls:
@@ -23,11 +24,12 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: lazy
-            provider: app_user_provider
+            anonymous: ~
+            logout: ~
+
             guard:
                 authenticators:
-                    - App\Security\CaregiverLoginFormAuthenticator
+                    - App\Security\TokenAuthenticator                    
             logout:
                 path: app_logout
                 # where to redirect after logout
@@ -45,3 +47,6 @@ security:
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/*, roles: ROLE_USER }  
+        

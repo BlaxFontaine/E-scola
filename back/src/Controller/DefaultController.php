@@ -5,7 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-    
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 class DefaultController extends AbstractController
 {
     /**
@@ -63,5 +65,26 @@ class DefaultController extends AbstractController
         $response->setContent(json_encode($users));
         
         return $response;
+    }
+
+    /**
+      * @Route("/api/login", methods={"POST"})
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function login(Request $request)
+    {
+        // $$ TODO check if a user exist in the db with the login and password.
+        if ($request->get("login") == "test" && $request->get("password") == "pwd")
+        {
+            // $$ TODO: return the api key of the user.
+            return JsonResponse::fromJsonString('{ "key": "123" }');
+        }
+
+        $data = array(
+            // you might translate this message
+            'message' => 'Invalid login/password'
+        );
+
+        return new JsonResponse($data, Response::HTTP_UNAUTHORIZED);
     }
 }
