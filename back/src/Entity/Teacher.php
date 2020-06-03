@@ -15,11 +15,13 @@ class Teacher implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups ("teach")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Groups ("teach")
      */
     private $email;
 
@@ -36,16 +38,19 @@ class Teacher implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("teach")
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("teach")
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("teach")
      */
     private $avatar;
 

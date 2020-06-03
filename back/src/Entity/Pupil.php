@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\PupilRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PupilRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -15,6 +16,7 @@ class Pupil implements UserInterface
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups ("pupil")
      */
     private $id;
 
@@ -36,16 +38,19 @@ class Pupil implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("pupil")
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("pupil")
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("pupil")
      */
     private $avatar;
 
