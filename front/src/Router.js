@@ -4,6 +4,8 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import testGetDataFromBack  from "./testGetDataBack.js";
 import Home from './home';
 import Test from './components/test'
+import TestRegist from './components/testRegist'
+
 //import { PrivateRoute } from "./components/PrivateRoute.js";
 
 class Routes extends Component {
@@ -16,6 +18,7 @@ class Routes extends Component {
                     <Route path="/home" component={Home} />
                     <Route path="/testData" component={testGetDataFromBack} />
                     <Route path="/test" component={Test} />
+                    <Route path="/testregist" component={TestRegist} />
                     <Redirect to="/home" />
 
                 </Switch>
