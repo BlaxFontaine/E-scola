@@ -21,7 +21,7 @@ import axios from 'axios';
         const user = {
             firstname: this.state.firstname
         }
-        axios.post(`http://127.0.0.1:8000/api/post`, { user })
+        axios.post(`https://127.0.0.1:8000/api/post/mascot`, { user })
             .then(res => {
                 console.log(res);
                 console.log(res.data)
