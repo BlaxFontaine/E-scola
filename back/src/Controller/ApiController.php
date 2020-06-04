@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Caregiver;
+use App\Entity\Mascot;
 use App\Repository\MascotRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -120,6 +121,18 @@ class ApiController
     //     return $response;
     // }
 
-    
+      /**
+     * @Route("/api/post/mascot", name="api_post_mascot", methods={"POST"})
+     */
+    public function store(Request $Request, SerializerInterface $Serializer, EntityManagerInterface $manager)
+    {
+        $recu = $Request->getContent();
+        $post = $Serializer->deserialize($recu, Mascot::class, 'json');
+        $manager->persist($post);
+        $manager->flush();
+        return $reponse = new JsonResponse($post, 201, [],true);
+        dd($post);
+
+    }
 
 }
