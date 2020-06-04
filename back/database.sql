@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS users (
     firstname VARCHAR(255),
     lastname VARCHAR(255),
     role VARCHAR(255),
-    classes_id INT NOT NULL,
-    attendances_id INT NOT NULL,
+    classes_id INT,
+    attendances_id INT,
     teachers_id INT,
     UNIQUE(email),
     CONSTRAINT `fk_user_class`
@@ -64,8 +64,8 @@ CREATE TABLE IF NOT EXISTS lessons (
 CREATE TABLE IF NOT EXISTS activities (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     assignments_id INT,
-    lessons_id INT NOT NULL,
-    classes_id INT NOT NULL,
+    lessons_id INT,
+    classes_id INT,
     CONSTRAINT `fk_activity_lesson`
         FOREIGN KEY (lessons_id) REFERENCES lessons (id)
         ON DELETE CASCADE
