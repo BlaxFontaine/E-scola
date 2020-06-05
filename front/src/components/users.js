@@ -5,11 +5,12 @@ import React, {Component} from 'react';
 class Users extends Component {
     constructor() {
         super();
-        this.state = { users: [], loading: true};
+        this.state = { users: [], loading: true, student : []};
     }
     
     componentDidMount() {
         this.getUsers();
+        this.getStudent();
     }
     
     getUsers() {
@@ -17,9 +18,18 @@ class Users extends Component {
            this.setState({ users: users.data, loading: false})
        })
     }
+
+    getStudent() {
+        axios.get(`http://127.0.0.1:8000/api/getstudent`).then(student => {
+            this.setState({ student: student.data})
+        })
+     }
+
+    
     
     render() {
         const loading = this.state.loading;
+        const student = this.state.student;
         return(
             <div>
                 <section className="row-section">
@@ -27,6 +37,9 @@ class Users extends Component {
                         <div className="row">
                             <h2 className="text-center"><span>List of users</span>Created with <i
                                 className="fa fa-heart"></i> by yemiwebby</h2>
+                                
+
+
                         </div>
                         {loading ? (
                             <div className={'row text-center'}>
@@ -44,6 +57,9 @@ class Users extends Component {
                                                              src={user.imageURL}/>
                                                     </div>
                                                     <div className="media-body">
+                                                    {student.id}
+                                {student.studentName}
+                                {student.studentClasse}
                                                         <h4>{user.name}</h4>
                                                         <p>{user.description}</p>
                                                     </div>

@@ -64,4 +64,28 @@ class DefaultController extends AbstractController
         
         return $response;
     }
+
+
+/**
+     * @Route("/api/getstudent", name="getStudent")
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function getStudent()
+    {
+        $student = [
+            'id' => 'text',
+            'studentName' => 'toto',
+            'studentClasse' => 'Ce2'
+        ];
+
+        $response = new Response();
+
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+
+        $response->setContent(json_encode($student));
+        
+        return $response;
+    }
+    
 }
