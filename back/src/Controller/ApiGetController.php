@@ -33,31 +33,31 @@ class ApiGetController
       /**
      * @Route("/api/get/mascot/{id}", name="api_get_mascot_id, methods={"GET"})
      */
-    public function getMascotState($id, MascotRepository $mascotRepository, NormalizerInterface $Normalizer, SerializerInterface $Serializer)
-    {
-        $product = $mascotRepository->findById($id);
-        $post = $Normalizer->normalize($product, null, ['groups' => 'mascot']);
-        $json = json_encode($post);
-        $response = new Response($json, 200, [
-                'content-type' => 'application/json',
-                'Access-Control-Allow-Origin','*'
-            ]);
-        return $response;
-    }
+    // public function getMascotState($id, MascotRepository $mascotRepository, NormalizerInterface $Normalizer, SerializerInterface $Serializer)
+    // {
+    //     $product = $mascotRepository->findById($id);
+    //     $post = $Normalizer->normalize($product, null, ['groups' => 'mascot']);
+    //     $json = json_encode($post);
+    //     $response = new Response($json, 200, [
+    //             'content-type' => 'application/json',
+    //             'Access-Control-Allow-Origin','*'
+    //         ]);
+    //     return $response;
+    // }
 
         /**
      * @Route("/api/get/visitor", name="api_get_visitor")
      */
-    public function getVisitor(VisitorRepository $visitorRepository, NormalizerInterface $Normalizer, SerializerInterface $Serializer)
-    {
-        $product = $visitorRepository->findAll();
-        $post = $Normalizer->normalize($product, null);
-        $json = json_encode($post);
-        $response = new Response($json, 200, [
-                'content-type' => 'application/json',
-                'Access-Control-Allow-Origin','*'
-            ]);
-        return $response;
-    } 
+    // public function getVisitor(VisitorRepository $visitorRepository, NormalizerInterface $Normalizer, SerializerInterface $Serializer)
+    // {
+    //     $product = $visitorRepository->findAll();
+    //     $post = $Normalizer->normalize($product, null);
+    //     $json = json_encode($post);
+    //     $response = new Response($json, 200, [
+    //             'content-type' => 'application/json',
+    //             'Access-Control-Allow-Origin','*'
+    //         ]);
+    //     return $response;
+    // } 
 
 }
