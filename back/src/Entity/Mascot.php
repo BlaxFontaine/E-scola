@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\MascotRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MascotRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=MascotRepository::class)
@@ -14,16 +15,19 @@ class Mascot
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups ("mascot")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("mascot")
      */
     private $state;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("mascot")
      */
     private $phrase;
 
