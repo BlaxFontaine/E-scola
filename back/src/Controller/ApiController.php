@@ -49,17 +49,17 @@ class ApiController
     /**
      * @Route("/api/get/mascot", name="api_get_mascot", methods={"GET"})
      */
-    public function getMascot(MascotRepository $MascotRepository, NormalizerInterface $Normalizer, SerializerInterface $Serializer)
-    {
-        $product = $MascotRepository->findAll();
-        $post = $Normalizer->normalize($product, null, ['groups' => 'mascot']);
-        $json = json_encode($post);
-        $response = new Response($json, 200, [
-                'content-type' => 'application/json',
-                'Access-Control-Allow-Origin','*'
-            ]);
-        return $response;
-    }
+    // public function getMascot(MascotRepository $MascotRepository, NormalizerInterface $Normalizer, SerializerInterface $Serializer)
+    // {
+    //     $product = $MascotRepository->findAll();
+    //     $post = $Normalizer->normalize($product, null, ['groups' => 'mascot']);
+    //     $json = json_encode($post);
+    //     $response = new Response($json, 200, [
+    //             'content-type' => 'application/json',
+    //             'Access-Control-Allow-Origin','*'
+    //         ]);
+    //     return $response;
+    // }
 
     /**
      * @Route("/api/get/pupils", name="api_get_pupils", methods={"GET"})
@@ -135,6 +135,9 @@ class ApiController
         //     'Content-Type' => 'text/plain charset=UTF-8',
         //     'Content-Length' => 0
         // ]);  
+
+        // $response->headers->set('Content-Type', 'application/json');
+        // $response->headers->set('Access-Control-Allow-Origin', '*');
 
         $recu = $Request->getContent();
         $post = $Serializer->deserialize($recu, Mascot::class, 'json');
