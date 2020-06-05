@@ -24,22 +24,9 @@ class Test extends Component {
         const loading = this.state.loading;
         return (
             <div>
-    
-                        {loading ? (
-                            <div className={'row text-center'}>
-                                <span className="fa fa-spin fa-spinner fa-4x"></span>
-                            </div>
-    
-                        ) : (
-                            <div className={'row'}>
-                                {this.state.posts.map(post =>
-                                            <li>
-                                                        <h4>{post.phrase}</h4>
-                                                        <p>{post.state}</p>
-                                            </li>
+                {this.state.posts.map(post =>
+                    <div> <p>{post.state} : {post.phrase}</p></div>
                                 )}
-                            </div>
-                        )}
             </div>
         )
     }
