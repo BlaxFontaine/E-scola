@@ -17,7 +17,7 @@ class Mascot
      * @ORM\Column(type="integer")
      * @Groups ("mascot")
      */
-    private $id;
+    private $iad;
 
     /**
      * @ORM\Column(type="string", length=255)
