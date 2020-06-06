@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Users;
 use App\Entity\Classes;
+use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TeachersRepository;
 use Symfony\Component\Serializer\Annotation\Groups;
 

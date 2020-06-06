@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Users;
 use App\Entity\Mascot;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,8 +44,25 @@ class ApiPostController
             ],
             JsonResponse::HTTP_CREATED
         );
-        // $response->set->header("Access-Control-Allow-Origin: *");
-        // return $response = new Response();
-       
+    }
+
+    /**
+     * @Route("/api/post/new/teacher", name="api_post_new_teacher", methods={"POST"})
+     */
+    public function registerNewteacher(Request $Request, SerializerInterface $Serializer, EntityManagerInterface $manager)
+    {
+
+    $recu = $Request->getContent();
+    $post = $Serializer->deserialize($recu, Users::class, 'json');
+    $post->setRole('teacher');
+    $manager->persist($post);
+    $manager->flush();
+
+    return new JsonResponse(
+        [
+            'status' => 'ok',
+        ],
+        JsonResponse::HTTP_CREATED
+    );
     }
 }

@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
+use App\Entity\Users;
+use App\Entity\Teachers;
+use App\Entity\Activities;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ClassesRepository;
-use App\Entity\Teachers;
-use App\Entity\Users;
-use App\Entity\Activities;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Serializer\Annotation\Groups;

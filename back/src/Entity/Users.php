@@ -41,6 +41,7 @@ class Users
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups ("user")
+     * @Groups ("teachers")
      */
     private $email;
 
@@ -55,21 +56,24 @@ class Users
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups ("user")
+     * @Groups ("teachers")
      */
     private $password;
 
         /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups ("user")
+     * @Groups ("teachers")
      */
     private $role;
 
     /**
      * @ORM\ManyToOne(targetEntity=Classes::class, inversedBy="name")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      * @Groups ("caregivers")
      * @Groups ("students")
      * @Groups ("user")
+     * @Groups ("teachers")
      */
     private $classes;
 
