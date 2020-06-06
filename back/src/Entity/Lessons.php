@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\LessonsRepository;
+use App\Entity\Activities;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\LessonsRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=LessonsRepository::class)
@@ -14,27 +16,32 @@ class Lessons
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups ("lessons")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("lessons")
      */
     private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity=activities::class)
      * @ORM\JoinColumn(nullable=false)
+     * @Groups ("lessons")
      */
     private $activities;
 
     /**
      * @ORM\Column(type="date")
+     * @Groups ("lessons")
      */
     private $start;
 
     /**
      * @ORM\Column(type="date")
+     * @Groups ("lessons")
      */
     private $end;
 

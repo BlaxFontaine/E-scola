@@ -2,10 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\ClassesRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ClassesRepository;
+use App\Entity\Teachers;
+use App\Entity\Users;
+use App\Entity\Activities;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ClassesRepository::class)
@@ -16,18 +20,26 @@ class Classes
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups ("classes")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string")
+     * @Groups ("teachers")
+     * @Groups ("classes")
+     * @Groups ("activities")
+     * @Groups ("caregivers")
+     * @Groups ("user")
      */
     private $name;
 
     /**
-     * @ORM\OneToOne(targetEntity=Teacher::class, mappedBy="classe", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Teachers::class, mappedBy="classe", cascade={"persist", "remove"})
+     * @Groups ("classes")
+     * @Groups ("user")
      */
-    private $teacherName;
+    private $teachersName;
 
     /**
      * @ORM\ManyToMany(targetEntity=Activities::class, mappedBy="classe")
@@ -45,10 +57,8 @@ class Classes
         return $this->id;
     }
 
-    /**
-     * @return Collection|users[]
-     */
-    public function getName(): Collection
+   
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -76,18 +86,18 @@ class Classes
         return $this;
     }
 
-    public function getTeacherName(): ?Teacher
+    public function getTeachersName(): ?Teachers
     {
-        return $this->teacherName;
+        return $this->teachersName;
     }
 
-    public function setTeacherName(Teacher $teacherName): self
+    public function setTeachersName(Teachers $teachersName): self
     {
-        $this->teacherName = $teacherName;
+        $this->teachersName = $teachersName;
 
         // set the owning side of the relation if necessary
-        if ($teacherName->getClasse() !== $this) {
-            $teacherName->setClasse($this);
+        if ($teachersName->getClasse() !== $this) {
+            $teachersName->setClasse($this);
         }
 
         return $this;

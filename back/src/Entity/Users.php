@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\UsersRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\UsersRepository;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UsersRepository::class)
@@ -14,42 +15,61 @@ class Users
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups ("caregivers")
+     * @Groups ("user")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("teachers")
+     * @Groups ("caregivers")
+     * @Groups ("students")
+     * @Groups ("user")
      */
     private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("teachers")
+     * @Groups ("caregivers")
+     * @Groups ("students")
+     * @Groups ("user")
      */
     private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ("user")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ("caregivers")     
+     * @Groups ("studetns")
+     * @Groups ("user")
      */
     private $childcode;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ("user")
      */
     private $password;
 
         /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ("user")
      */
     private $role;
 
     /**
      * @ORM\ManyToOne(targetEntity=Classes::class, inversedBy="name")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups ("caregivers")
+     * @Groups ("students")
+     * @Groups ("user")
      */
     private $classes;
 
