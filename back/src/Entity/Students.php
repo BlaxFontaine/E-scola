@@ -3,22 +3,24 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\TeachersRepository;
-use App\Entity\Classes;
+use App\Repository\StudentsRepository;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ORM\Entity(repositoryClass=TeachersRepository::class)
+ * @ORM\Entity(repositoryClass=StudentsRepository::class)
  */
-class Teachers
+class Students
 {
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups ("teachers")
+     * @Groups ("students")
+     * @Groups ("student")
+     * @Groups ("stuclas")
      */
     private $id;
+
     /**
      * @ORM\Column(type="string", length=255)
      * @ORM\JoinColumn(nullable=false)
@@ -39,17 +41,11 @@ class Teachers
      */
     private $lastname;
 
-        /**
-     * @ORM\Column(type="string", length=255)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $email;
-
     /**
-     * @ORM\OneToOne(targetEntity=classes::class, inversedBy="teacher", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Classes::class, inversedBy="students")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups ("teachers")
      * @Groups ("students")
+     * @Groups ("student")
      */
     private $classe;
 
@@ -70,18 +66,6 @@ class Teachers
         return $this;
     }
 
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
     public function getLastname(): ?string
     {
         return $this->lastname;
@@ -94,12 +78,12 @@ class Teachers
         return $this;
     }
 
-    public function getClasse(): ?classes
+    public function getClasse(): ?Classes
     {
         return $this->classe;
     }
 
-    public function setClasse(classes $classe): self
+    public function setClasse(?Classes $classe): self
     {
         $this->classe = $classe;
 

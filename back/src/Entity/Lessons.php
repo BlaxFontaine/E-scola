@@ -16,34 +16,39 @@ class Lessons
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups ("lessons")
+     * @Groups ("stuact")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups ("lessons")
+     * @Groups ("teachers")
+     * @Groups ("student")
+     * @Groups ("classes")
+     * @Groups ("stuact")
      */
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=activities::class)
-     * @ORM\JoinColumn(nullable=false)
-     * @Groups ("lessons")
-     */
-    private $activities;
-
-    /**
      * @ORM\Column(type="date")
-     * @Groups ("lessons")
+     * @Groups ("teachers")
+     * @Groups ("classes")
+     * @Groups ("stuact")
      */
     private $start;
 
     /**
      * @ORM\Column(type="date")
-     * @Groups ("lessons")
+     * @Groups ("teachers")
+     * @Groups ("classes")
+     * @Groups ("stuact")
      */
     private $end;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Activities::class, inversedBy="lessons")
+     */
+    private $activity;
 
     public function getId(): ?int
     {
@@ -58,18 +63,6 @@ class Lessons
     public function setName(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getActivities(): ?activities
-    {
-        return $this->activities;
-    }
-
-    public function setActivities(?activities $activities): self
-    {
-        $this->activities = $activities;
 
         return $this;
     }
@@ -93,7 +86,19 @@ class Lessons
 
     public function setEnd(\DateTimeInterface $end): self
     {
-        $this->end = $end;
+        $this->start = $end;
+
+        return $this;
+    }
+
+    public function getActivity(): ?Activities
+    {
+        return $this->activity;
+    }
+
+    public function setActivity(?Activities $activity): self
+    {
+        $this->activity = $activity;
 
         return $this;
     }
