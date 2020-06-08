@@ -67,7 +67,7 @@ export class RegisterForm extends React.Component {
       haserror=true;
     }
     if (!cpassword || cpassword.length === 0) {
-      this.setState({ errorcpassword: "    Veuillez confirmer le password" })
+      this.setState({ errorcpassword: "    Veuillez confirmer le mot de passe" })
       haserror=true;
     }
     else if (cpassword != password ) {
@@ -117,7 +117,7 @@ export class RegisterForm extends React.Component {
               <Form.Row>
                 <Form.Group as={Col} controlId="firstname">
                   <Form.Label>Firstname</Form.Label>
-                  <i className="error">
+                  <i className="error" >
                     {errorfirst}
                   </i>
                   <Form.Control
@@ -125,7 +125,7 @@ export class RegisterForm extends React.Component {
                     //value={firstname}
                     onChange={this.handleChange}
                     type="text"
-                    placeholder="Firstname" />
+                    placeholder="prénom" />
                 </Form.Group>
                 <Form.Group as={Col} controlId="lastname">
                   <Form.Label>Lastname</Form.Label>
@@ -136,6 +136,7 @@ export class RegisterForm extends React.Component {
                     autoFocus
                     type="text"
                    // value={lastname}
+                   placeholder="nom" 
                     onChange={this.handleChange}
                     />
                 </Form.Group>
@@ -153,7 +154,8 @@ export class RegisterForm extends React.Component {
                     autoFocus
                     type="email"
                     //value={email}
-                    onChange={this.handleChange} placeholder="Enter your email" />
+                    placeholder="email" 
+                    onChange={this.handleChange} placeholder="Entrez votre e-mail" />
                 </Form.Group>
 
 
@@ -161,14 +163,14 @@ export class RegisterForm extends React.Component {
 
               <Form.Row>
                 <Form.Group as={Col} controlId="password">
-                  <Form.Label>Password</Form.Label>
+                  <Form.Label>Mot de passe</Form.Label>
                   <i className="error">
                     {errorpassword}
                   </i>
                   <Form.Control
                     //value={password}
                     onChange={this.handleChange}
-                    type="password" placeholder="Password" />
+                    type="password" placeholder="Mot de passe" />
                 </Form.Group>
                 <Form.Group as={Col} controlId="cpassword">
                   <Form.Label>Confirmation</Form.Label>
@@ -178,7 +180,7 @@ export class RegisterForm extends React.Component {
                   <Form.Control
                     value={cpassword}
                     onChange={this.handleChange}
-                    type="password" placeholder="Confirm your password" />
+                    type="password" placeholder="Confirmez le mot de passe" />
                 </Form.Group>
               </Form.Row>
 

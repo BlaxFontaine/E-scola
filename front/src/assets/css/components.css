@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Infini';
-    src: url('../fonts/infini/infini-gras.otf') format("otf")
+    src: url('../fonts/infini/infini-gras.otf') format("otf");
 }
 
 
@@ -19,7 +19,7 @@
     align-items: center;
     color:white;
     border-radius: 30px 30px 0px 0px;
-    font-size: xx-large;
+    font-size: x-large;
     font-family:'Infini';
 
 }
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: center;
     border-radius: 30px 30px 30px 30px;
-    font-size: xx-large;
+    font-size: x-large;
     font-family:'Infini';
     padding-top: 5%;
     padding-bottom: 3%;
@@ -42,7 +42,7 @@
     align-items: initial;
     color:#FE0179;
     border-radius: 30px 0px 0px 30px;
-    font-size: xx-large;
+    font-size: x-large;
     font-family:'Infini';
 
     
@@ -52,7 +52,7 @@
     justify-content: center;
     align-items: initial;
     color:#FE0179;
-    font-size: xx-large;
+    font-size: x-large;
     font-family:'Infini';
 
     
@@ -64,7 +64,7 @@
     align-items: initial ;
     color:#FE0179;
     border-radius: 0px 30px 30px 0px;
-    font-size: xx-large;
+    font-size: x-large;
     font-family:'Infini';
 
    
@@ -80,4 +80,8 @@
 .LR{
     justify-content: center;
     align-items: center;
+}
+
+.error {
+    font-size: small;
 }

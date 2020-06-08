@@ -54,23 +54,29 @@ export class LoginForm extends React.Component {
       <div className="Login">
         <Card className="CardL">
         <FormGroup controlId="email" bsSize="large">
-          {erroremail}
           <FormLabel>Email</FormLabel>
+        <i className="error" >
+        {erroremail}
+                  </i>
           <FormControl
           
             autoFocus
             type="email"
            //value={email}
+           placeholder="Entrez votre e-mail"
             onChange={this.handleChange}
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
-          {errorpassword}
-          <FormLabel>Password</FormLabel>
+          <FormLabel>Mot de passe</FormLabel>
+        <i className="error" >
+        {errorpassword}
+                  </i>
           <FormControl
             //value={password}
             onChange={this.handleChange}
             type="password"
+            placeholder="Entrez votre mot de passe"
           />
         </FormGroup>
         <div className="error"></div>
