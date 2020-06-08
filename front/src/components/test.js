@@ -17,7 +17,7 @@ class Test extends Component {
     }
     
     getPosts() {
-        axios.get(`http://127.0.0.1:8000/api/get/mascot/`).then(res => {
+        axios.get(`https://127.0.0.1:8000/api/get/mascot/`).then(res => {
             const posts = res.data;
             this.setState({ posts })
         })

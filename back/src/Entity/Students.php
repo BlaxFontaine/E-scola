@@ -91,7 +91,7 @@ class Students
         return $this->firstname;
     }
 
-    public function setFirstame(string $firstname): self
+    public function setFirstname(string $firstname): self
     {
         $this->lastname = $firstname;
 
@@ -103,7 +103,7 @@ class Students
         return $this->lastname;
     }
 
-    public function setLastame(string $lastname): self
+    public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
 

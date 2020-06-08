@@ -17,27 +17,28 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class ApiPostController
 {
-        /**
-     * @Route("/api/post/mascot", name="api_post_mascot", methods={"POST"})
+    /**
+     * @Route("/api/post/mascot", name="api_post_mascot")
      */
-    public function store(Request $Request, SerializerInterface $Serializer, EntityManagerInterface $manager)
+    public function store2(Request $Request, SerializerInterface $Serializer, EntityManagerInterface $manager)
     {
-        // return new Response('', 200, [
-        //     'Access-Control-Allow-Origin' => '*',
-        //     'Access-Control-Allow-Credentials' => 'true',
-        //     'Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, OPTIONS',
-        //     'Access-Control-Allow-Headers' => 'DNT, X-User-Token, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type',
-        //     'Access-Control-Max-Age' => 1728000,
-        //     'Content-Type' => 'text/plain charset=UTF-8',
-        //     'Content-Length' => 0
-        // ]);  
+        
+        echo ("request" . $Request->isMethod("options"));
+        return new Response('', 200, [
+            'Access-Control-Allow-Origin' => '*',
+            'Access-Control-Allow-Credentials' => 'true',
+            'Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers' => 'DNT, X-User-Token, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type',
+            'Access-Control-Max-Age' => 1728000,
+            'Content-Type' => 'text/plain charset=UTF-8',
+            'Content-Length' => 0
+        ]);
 
-        // $response->headers->set('Content-Type', 'application/json');
-        // $response->headers->set('Access-Control-Allow-Origin', '*');
 
         $recu = $Request->getContent();
-        $post = $Serializer->deserialize($recu, Students::class, 'json');
-        $post->setClasse(1);
+        $lol = json_decode($recu);
+        $post = $Serializer->deserialize($recu, Mascot::class, 'json');
+;
         $manager->persist($post);
         $manager->flush();
 
@@ -47,25 +48,27 @@ class ApiPostController
             ],
             JsonResponse::HTTP_CREATED
         );
+
+
     }
 
-    /**
-     * @Route("/api/post/new/teacher", name="api_post_new_teacher", methods={"POST"})
+
+      /**
+     * @Route("/api/post/new/student", name="api_post_new_student")
      */
-    public function registerNewteacher(Request $Request, SerializerInterface $Serializer, EntityManagerInterface $manager)
+    public function registerNewStudent(Request $Request, SerializerInterface $Serializer, EntityManagerInterface $manager)
     {
 
     $recu = $Request->getContent();
-    $post = $Serializer->deserialize($recu, Users::class, 'json');
-    $post->setRole('teacher');
+    $parametersAsArray = json_decode($recu, true);
+
+    $post = $Serializer->deserialize($recu, Students::class, 'json');
+    $post->getFirstname();
+    $post->setFirstname("kk");
+
     $manager->persist($post);
     $manager->flush();
 
-    return new JsonResponse(
-        [
-            'status' => 'ok',
-        ],
-        JsonResponse::HTTP_CREATED
-    );
+    return new Response();
     }
 }
