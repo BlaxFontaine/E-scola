@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Users;
 use App\Entity\Mascot;
+use App\Entity\Classes;
+use App\Entity\Students;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,7 +36,8 @@ class ApiPostController
         // $response->headers->set('Access-Control-Allow-Origin', '*');
 
         $recu = $Request->getContent();
-        $post = $Serializer->deserialize($recu, Mascot::class, 'json');
+        $post = $Serializer->deserialize($recu, Students::class, 'json');
+        $post->setClasse(1);
         $manager->persist($post);
         $manager->flush();
 

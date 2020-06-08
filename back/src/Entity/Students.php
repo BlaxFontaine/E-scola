@@ -51,7 +51,7 @@ class Students
     private $lastname;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Classes::class, inversedBy="students")
+     * @ORM\ManyToOne(targetEntity=Classes::class, inversedBy="students", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      * @Groups ("students")
      * @Groups ("student")
