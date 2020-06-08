@@ -126,20 +126,17 @@ class ApiController
      */
     public function store(Request $Request, SerializerInterface $Serializer, EntityManagerInterface $manager)
     {
-        echo "tadaaaaa";
-        echo ("request" . $Request->isMethod("options"));
-        return new Response('', 200, [
-            'Access-Control-Allow-Origin' => '*',
-            'Access-Control-Allow-Credentials' => 'true',
-            'Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, OPTIONS',
-            'Access-Control-Allow-Headers' => 'DNT, X-User-Token, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type',
-            'Access-Control-Max-Age' => 1728000,
-            'Content-Type' => 'text/plain charset=UTF-8',
-            'Content-Length' => 0
-        ]);  
+        // return new Response('', 200, [
+        //     'Access-Control-Allow-Origin' => '*',
+        //     'Access-Control-Allow-Credentials' => 'true',
+        //     'Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, OPTIONS',
+        //     'Access-Control-Allow-Headers' => 'DNT, X-User-Token, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type',
+        //     'Access-Control-Max-Age' => 1728000,
+        //     'Content-Type' => 'text/plain charset=UTF-8',
+        //     'Content-Length' => 0
+        // ]);  
 
         $recu = $Request->getContent();
-        echo "tadaaaaa";
         $post = $Serializer->deserialize($recu, Mascot::class, 'json');
         $manager->persist($post);
         $manager->flush();
