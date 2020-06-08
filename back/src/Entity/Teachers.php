@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
+use App\Entity\Classes;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TeachersRepository;
-use App\Entity\Classes;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
@@ -26,6 +26,7 @@ class Teachers
      * @Groups ("students")
      * @Groups ("student")
      * @Groups ("stuclas")
+     * @Groups ("caregivers")
      */
     private $firstname;
 
@@ -36,6 +37,7 @@ class Teachers
      * @Groups ("students")
      * @Groups ("student")
      * @Groups ("stuclas")
+     * @Groups ("caregivers")
      */
     private $lastname;
 

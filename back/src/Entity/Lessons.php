@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Entity\Activities;
+use App\Entity\Assigments;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\LessonsRepository;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -17,6 +18,7 @@ class Lessons
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      * @Groups ("stuact")
+     * @Groups ("assig")
      */
     private $id;
 
@@ -26,6 +28,7 @@ class Lessons
      * @Groups ("student")
      * @Groups ("classes")
      * @Groups ("stuact")
+     * @Groups ("assig")
      */
     private $name;
 

@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Teachers;
 use App\Entity\Students;
+use App\Entity\Teachers;
 use App\Entity\Activities;
+use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ClassesRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -32,6 +32,7 @@ class Classes
      * @Groups ("classes")
      * @Groups ("stuclas")
      * @Groups ("stuact")
+     * @Groups ("caregivers")
      */
     private $name;
 
@@ -39,6 +40,7 @@ class Classes
      * @ORM\OneToOne(targetEntity=Teachers::class, mappedBy="classe", cascade={"persist", "remove"})
      * @Groups ("classes")
      * @Groups ("stuact")
+     * @Groups ("caregivers")
      */
     private $teacher;
 

@@ -4,12 +4,14 @@ namespace App\Controller;
 
 use Doctrine\ORM\EntityRepository;
 use App\Repository\MascotRepository;
+use App\Repository\ClassesRepository;
 use App\Repository\LessonsRepository;
+use App\Repository\StudentsRepository;
+use App\Repository\TeachersRepository;
 use App\Repository\HomeVisitRepository;
 use App\Repository\ActivitiesRepository;
-use App\Repository\StudentsRepository;
-use App\Repository\ClassesRepository;
-use App\Repository\TeachersRepository;
+use App\Repository\AssigmentsRepository;
+use App\Repository\CaregiversRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -186,6 +188,38 @@ class ApiGetController
 
         $get = $teachersRepository->findAll();
         $object = $Normalizer->normalize($get, null, ['groups' => 'teacherss']);
+        $json = json_encode($object);
+        $response = new Response($json, 200, [
+                'content-type' => 'application/json',
+                'Access-Control-Allow-Origin','*'
+            ]);
+        return $response;
+    } 
+
+            /**
+     * @Route("/api/get/caregivers/list", name="api_get_all_caregivers")
+     */
+    public function getCaregivers (CaregiversRepository $caregiversRepository, NormalizerInterface $Normalizer)
+    {
+
+        $get = $caregiversRepository->findAll();
+        $object = $Normalizer->normalize($get, null, ['groups' => 'caregivers']);
+        $json = json_encode($object);
+        $response = new Response($json, 200, [
+                'content-type' => 'application/json',
+                'Access-Control-Allow-Origin','*'
+            ]);
+        return $response;
+    } 
+
+            /**
+     * @Route("/api/get/student/{id}/assigments", name="api_get_all_students_daetails")
+     */
+    public function getStudentAssigments ($id, AssigmentsRepository $assigmentsRepository, NormalizerInterface $Normalizer)
+    {
+
+        $get = $assigmentsRepository->findBy(array('student' => $id), array('id' => 'desc'), 40, 0);
+        $object = $Normalizer->normalize($get, null, ['groups' => 'assig']);
         $json = json_encode($object);
         $response = new Response($json, 200, [
                 'content-type' => 'application/json',
