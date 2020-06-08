@@ -65,9 +65,9 @@ class Teachers
         return $this->firstname;
     }
 
-    public function setFirstame(string $firstname): self
+    public function setFirstname(string $firstname): self
     {
-        $this->lastname = $firstname;
+        $this->firstname = $firstname;
 
         return $this;
     }

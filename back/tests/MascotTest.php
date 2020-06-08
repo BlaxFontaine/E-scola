@@ -9,7 +9,7 @@ class MascotTest extends TestCase {
     public function testMascotCanBeCreated () {
         $mascot = new Mascot();
         $mascot->setState("Happy");
-        $mascot->setPhrase("Revolution is not a one time event. Audre Lorde");
+        $mascot->setSentence("Revolution is not a one time event. Audre Lorde");
 
         $this->assertEquals("Happy", $mascot->getState());
     }

@@ -101,7 +101,7 @@ class ApiGetController
                 /**
      * @Route("/api/get/classe/{id}/activities/", name="api_get_classes_students")
      */
-    public function getStudentsOfOdneClasse($id, ClassesRepository $classesRepository, NormalizerInterface $Normalizer)
+    public function getActivitiesOfOneClasse($id, ClassesRepository $classesRepository, NormalizerInterface $Normalizer)
     {
         $get = $classesRepository->findById($id);
         $object = $Normalizer->normalize($get, null, ['groups' => 'stuact']);
