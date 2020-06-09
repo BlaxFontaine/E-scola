@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../assets/css/studentspace.css';
+import { LandingStudent } from './pages/landingStudent';
 import { Container, Row, Col } from 'react-grid-system';
 
 
@@ -18,19 +19,24 @@ export class HomeStudent extends Component {
     //     })
 
     // }
-    
+
 
 
     render() {
         // if (this.state.whichSpace === "") {
-            return (
-                <Container fluid className="containerLanding">
-    <Row className="ContainerCol">
-        <Col className="Colleft" width="25%" >col-12 col-sm-6 col-md-8</Col>
-        <Col className="Colmain" width="70%" >col-6 col-md-4</Col>
-    </Row>
-</Container>
-            )
-        }
+        return (
+            <Container fluid className="containerLanding">
+                <Row className="ContainerCol">
+                    <Col className="Colleft" width="25%" >
+                        <Row>Avatar</Row>
+                        <Row>Nom</Row>
+                        <Row>Date</Row>
+                        <Row>Météo</Row>
+                    </Col>
+                    <LandingStudent/>
+                </Row>
+            </Container>
+        )
+    }
     // }
 }
