@@ -23,6 +23,21 @@
     font-family:'Infini';
 
 }
+
+.ColmainHome{
+    background-color: white ;
+    display: flex;
+
+    width: 70%;
+    justify-content: center;
+    border-radius: 30px 30px 30px 30px;
+    font-size: x-large;
+    font-family:'Infini';
+    padding-top: 5%;
+    padding-bottom: 3%;
+    
+
+}
 .Colmain{
     background-color: white ;
     display: flex;

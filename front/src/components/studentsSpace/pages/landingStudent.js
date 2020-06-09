@@ -33,25 +33,26 @@ export class LandingStudent extends Component {
         return (
 
             <Col className="Colmain" width="70%" >
-               <Row>
+                <div>
+               <Row style={{ justifyContent: 'space-around' }}>
                    <Col>
                 <button onClick={() => this.handleClickMenu("lessons")}>
-                    <img width="80" src={Lessons} alt="Leçons" />
+                    <img width="150" src={Lessons} alt="Leçons"  />
                 </button>
                 </Col>
                 <Col>
                 <button onClick={() => this.handleClickMenu("exercices")}>
-                    <img width="80" src={Exercices} alt="Exercices" />
+                    <img width="150" src={Exercices} alt="Exercices"  />
                 </button>
                 </Col>
                 </Row>
-                <Row>
+                <Row style={{ justifyContent: 'space-around' }}>
                 <button onClick={() => this.handleClickMenu("messages")}>
-                    <img width="80" src={Messages} alt="Messages" />
+                    <img width="150" src={Messages} alt="Messages" />
                 </button>
                 </Row>
 
-            
+            </div>
             </Col>
 
             

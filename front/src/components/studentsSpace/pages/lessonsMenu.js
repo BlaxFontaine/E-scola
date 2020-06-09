@@ -40,34 +40,34 @@ export class LessonsMenu extends Component {
                 <Row>
                     <Col>
                         <button >
-                            <img width="60" src={Write} alt="Ecriture" />
+                            <img width="100" src={Write} alt="Ecriture" />
                         </button>
                     </Col>
                     <Col>
                         <button >
-                            <img width="60" src={Maths} alt="Maths" />
+                            <img width="100" src={Maths} alt="Maths" />
                         </button>
                     </Col>
                     <Col>
                         <button >
-                            <img width="60" src={Geometry} alt="Géométrie" />
+                            <img width="100" src={Geometry} alt="Géométrie" />
                         </button>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <button >
-                            <img width="60" src={Art} alt="Arts" />
+                            <img width="100" src={Art} alt="Arts" />
                         </button>
                     </Col>
                     <Col>
                         <button >
-                            <img width="60" src={English} alt="Anglais" />
+                            <img width="100" src={English} alt="Anglais" />
                         </button>
                     </Col>
                     <Col>
                         <button >
-                            <img width="60" src={Sciences} alt="Sciences" />
+                            <img width="100" src={Sciences} alt="Sciences" />
                         </button>
                     </Col>
                 </Row>

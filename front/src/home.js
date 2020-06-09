@@ -47,7 +47,7 @@ class Home extends Component {
                         <Col xl={12} className="Col1">Apprendre à la maison</Col>
                     </Row>
                     <Row>
-                        <Col xl={12} width={800} className="Colmain">
+                        <Col xl={12} width={800} className="ColmainHome">
                             <Col xl={4} className="Col2left">
                                 <Row justify="center">Elève</Row>
                                 <Row justify="center">
