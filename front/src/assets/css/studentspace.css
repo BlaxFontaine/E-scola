@@ -3,7 +3,14 @@
     src: url('../fonts/infini/infini-gras.otf') format("otf");
 }
 
-
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
 
 .containerLanding {
     background-color: #9CD692 ;
@@ -27,12 +34,19 @@
     background-color: white ;
     width: 70%;
     justify-content: center;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 0px 0px 15px;
     font-size: x-large;
     font-family:'Infini';
     padding-top: 5%;
     padding-bottom: 3%;
     
+
+}
+.Colnav{
+    background-color: #F2BA29 ;
+    justify-content: center;
+    border-radius: 0px 15px 15px 0px;
+    margin-top: 0;
 
 }
 

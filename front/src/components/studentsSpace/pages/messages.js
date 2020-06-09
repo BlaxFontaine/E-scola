@@ -9,7 +9,7 @@ import Write from '../../../assets/img/png/student/write.png';
 import { Container, Row, Col } from 'react-grid-system';
 
 
-export class Messages extends Component {
+export class MessagesList extends Component {
 
     // constructor(props) {
     //     super(props)
@@ -31,45 +31,42 @@ export class Messages extends Component {
         // if (this.state.whichSpace === "") {
         return (
 
-
-            <Col className="Colmain" width="70%" >
-               <Row>
-                   Mes leçons
-                   <Col>
-                <button >
-                    <img width="150" src={Write} alt="Ecriture" />
+<div>
+                <Row>
+                    Mes messages
+                    </Row>
+                <Row>
+                    <button >
+                        Message 1
                 </button>
-                </Col>
-                <Col>
-                <button >
-                    <img width="150" src={Maths} alt="Maths" />
-                </button>
-                </Col>
-                <Col>
-                <button >
-                    <img width="150" src={Geometry} alt="Géométrie" />
-                </button>
-                </Col>
                 </Row>
                 <Row>
-                   <Col>
-                <button >
-                    <img width="150" src={Art} alt="Arts" />
-                </button>
-                </Col>
-                <Col>
-                <button >
-                    <img width="150" src={English} alt="Anglais" />
-                </button>
-                </Col>
-                <Col>
-                <button >
-                    <img width="150" src={Sciences} alt="Sciences" />
-                </button>
-                </Col>
+                    <button >
+                        Message 2
+                         </button>
                 </Row>
+                <Row>
+                    <button >
+                        Message 3
+                        </button>
+                </Row>
+                <Row>
+                    <button >
+                        Message 4
+                        </button>
+                </Row>
+                <Row>
+                    <button >
+                        Message 5
+                        </button>
+                </Row>
+                <Row>
+                    <button >
+                        Message 6
+                        </button>
+                </Row>
+                </div>
 
-            </Col>
         )
     }
     // }
