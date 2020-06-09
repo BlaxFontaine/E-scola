@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Infini';
+    src: url('../fonts/infini/infini-gras.otf') format("otf");
+}
+
+
+
+.containerLanding {
+    background-color: #9CD692 ;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ContainerCol{
+    width: 100%;
+    display: flex;
+    font-family:'Infini';
+    margin-top: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+}
+.Colmain{
+    background-color: white ;
+    width: 70%;
+    justify-content: center;
+    border-radius: 20px 20px 20px 20px;
+    font-size: x-large;
+    font-family:'Infini';
+    margin-top: 3%;
+    padding-top: 5%;
+    padding-bottom: 3%;
+    
+
+}
+
+.Colleft{
+    background-color: black ;
+    width: 25%;
+    margin-right: 2%;
+    justify-content: center;
+    align-items: initial;
+    color:#FE0179;
+    border-radius: 0px 10px 10px 0px;
+    font-size: x-large;
+    font-family:'Infini';
+
+    
+}
+.Col2center{
+    background-color: white ;  
+    justify-content: center;
+    align-items: initial;
+    color:#FE0179;
+    font-size: x-large;
+    font-family:'Infini';
+
+    
+
+}
+.Col2right{
+    background-color: rgb(255, 255, 255) ;
+    justify-content: center;
+    align-items: initial ;
+    color:#FE0179;
+    border-radius: 0px 30px 30px 0px;
+    font-size: x-large;
+    font-family:'Infini';
+
+   
+}
+.Img{
+
+    background-color: rgb(255, 255, 255) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LR{
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    font-size: small;
+}
