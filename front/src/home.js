@@ -17,6 +17,7 @@ class Home extends Component {
         super(props)//appel de props
         this.state = {
             whoAmI: "",
+            wantBackHome:false
 
         }
         // this.UserEntry = this.UserEntry.bind(this) //test est le nom de la fonction
