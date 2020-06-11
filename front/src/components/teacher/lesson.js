@@ -5,21 +5,22 @@ export default class Student extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            student: []
+            lesson: []
         }
         this.onEdit = this.onEdit.bind(this)
     }
 
     onEdit() {
-        console.log(this.state.student)
+        console.log(this.state.lesson)
     }
 
     render() {
         return (
             <tbody>
             <tr>
-              <td>{this.props.firstname}</td>
-              <td>{this.props.lastname}</td>
+              <td>{this.props.title}</td>
+              <td>{this.props.start_date}</td>
+              <td>{this.props.end_date}</td>
             </tr>
             </tbody>
             
