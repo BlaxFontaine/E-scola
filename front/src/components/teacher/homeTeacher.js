@@ -5,10 +5,18 @@ import TeacherBanner from './teacherBanner';
 export default class HomeTeacher extends Component {
     render() {
         return (
-            <div>
+           
+            <div >
                 < TeacherBanner />
                 < TeacherNav />
-            </div>
-        )
+                <style jsx global>{`
+                                body {
+                                margin: 0px;
+                                padding: 0px;
+                                }
+    `          }</style>
+            </div>    
+           
+        );
     }
 }

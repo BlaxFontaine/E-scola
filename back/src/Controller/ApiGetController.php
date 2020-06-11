@@ -245,4 +245,21 @@ class ApiGetController
         return $response;
     } 
 
+
+
+            /**
+     * @Route("/api/get/lessons/list", name="api_get_all_lessons")
+     */
+    public function getLessons (LessonsRepository $lessonsRepository, NormalizerInterface $Normalizer)
+    {
+
+        $get = $lessonsRepository->findAll();
+        $object = $Normalizer->normalize($get, null, ['groups' => 'lessons']);
+        $json = json_encode($object);
+        $response = new Response($json, 200, [
+                'content-type' => 'application/json',
+                'Access-Control-Allow-Origin','*'
+            ]);
+        return $response;
+    } 
 }
