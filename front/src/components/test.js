@@ -6,26 +6,35 @@ class Test extends Component {
     constructor() {
         super();
         
-        this.state = { posts: [], loading: true}
+        this.state = { 
+            posts: [],
+            classes: []
+        }
     }
     
     componentDidMount() {
-        this.getPosts();
+        this.getClasses();
     }
     
     getPosts() {
-        axios.get(`http://127.0.0.1:8000/api/get/mascot/`).then(res => {
+        axios.get(`https://127.0.0.1:8000/api/get/mascot/`).then(res => {
             const posts = res.data;
-            this.setState({ posts, loading: false })
+            this.setState({ posts })
+        })
+    }
+
+    getClasses() {
+        axios.get(`http://127.0.0.1:8000/api/get/classes/all`).then(res => {
+            const classes = res.data;
+            this.setState({ classes })
         })
     }
     
     render() {
-        const loading = this.state.loading;
         return (
             <div>
-                {this.state.posts.map(post =>
-                    <div> <p>{post.state} : {post.phrase}</p></div>
+                {this.state.classes.map(post =>
+                    <div> <il key = {post.id}> {post.name} </il></div>
                                 )}
             </div>
         )

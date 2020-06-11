@@ -29,7 +29,13 @@ class Mascot
      * @ORM\Column(type="string", length=255)
      * @Groups ("mascot")
      */
-    private $phrase;
+    private $sentence;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ("mascot")
+     */
+    private $img;
 
     public function getId(): ?int
     {
@@ -48,14 +54,26 @@ class Mascot
         return $this;
     }
 
-    public function getPhrase(): ?string
+    public function getSentence(): ?string
     {
-        return $this->phrase;
+        return $this->sentence;
     }
 
-    public function setPhrase(string $phrase): self
+    public function setSentence(string $sentence): self
     {
-        $this->phrase = $phrase;
+        $this->sentence = $sentence;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }
