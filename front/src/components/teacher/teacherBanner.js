@@ -38,7 +38,7 @@ export default class TeacherBanner extends Component {
                 </div>
                 <div className='column' style={{ paddingBottom:'10px' , color: 'white'}}>
                     <br/>
-                    Prénom Nom
+                    Ada Lovelace
                     <br/>
                     <br/>
                 </div>

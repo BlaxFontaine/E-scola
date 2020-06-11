@@ -25,10 +25,10 @@ class ApiGetController
     /**
      * @Route("/api/get/messages", name="api_get_messages")
     */
-    public function getMessages(MascotRepository $messagesRepository, NormalizerInterface $Normalizer)
+    public function getMessages(MessagesRepository $messagesRepository, NormalizerInterface $Normalizer)
     {
         $get = $messagesRepository->findAll();
-        $object = $Normalizer->normalize($get, null, ['groups' => 'mascot']);
+        $object = $Normalizer->normalize($get, null, ['groups' => 'mess']);
         $json = json_encode($object);
         $response = new Response($json, 200, [
                 'content-type' => 'application/json',

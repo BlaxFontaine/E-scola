@@ -14,26 +14,31 @@ class Messages
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups ("mess")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("mess")
      */
     private $sender;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups ("mess")
      */
     private $receiver;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ("mess")
      */
     private $object;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups ("mess")
      */
     private $content;
 
