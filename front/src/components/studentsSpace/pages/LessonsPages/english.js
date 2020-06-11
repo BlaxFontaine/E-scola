@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../../../assets/css/studentspace.css';
+import '../../../../assets/css/studentspace.css';
 import { Container, Row, Col } from 'react-grid-system';
 
 
-export class LessonsPage extends Component {
+export class LessonsEnglish extends Component {
 
     constructor(props) {
         super(props)
@@ -29,7 +29,7 @@ export class LessonsPage extends Component {
             <div>
 
                 <Row>
-                    Page de leçons
+                    Page de leçons Anglais
                    </Row>
                 
 

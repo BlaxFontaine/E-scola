@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './assets/css/components.css';
 import Img from './assets/img/png/home/banner.png'
+import Footer from './assets/img/png/home/footer.png'
 import Student from './assets/img/png/home/student.png'
 import Teacher from './assets/img/png/home/teacher.png'
 import Parents from './assets/img/png/home/parents.png'
@@ -17,6 +18,7 @@ class Home extends Component {
         super(props)//appel de props
         this.state = {
             whoAmI: "",
+            wantBackHome:false
 
         }
         // this.UserEntry = this.UserEntry.bind(this) //test est le nom de la fonction
@@ -98,6 +100,9 @@ class Home extends Component {
                             </Col>
                         </Col>
                     </Row>
+                    <Row >
+                    <img src={Footer} width="100%" height="150" />
+                    </Row>
 
                 </Container>
             )
@@ -130,7 +135,9 @@ class Home extends Component {
                             </Col>
                         </Col>
                     </Row>
-
+                    <Row >
+                    <img src={Footer} width="100%" height="150" />
+                    </Row>
                 </Container>
 
             )
@@ -163,7 +170,9 @@ class Home extends Component {
                             </Col>
                         </Col>
                     </Row>
-
+                    <Row >
+                    <img src={Footer} width="100%" height="150" />
+                    </Row>
                 </Container>
             )
         }
@@ -195,7 +204,9 @@ class Home extends Component {
                             </Col>
                         </Col>
                     </Row>
-
+                    <Row >
+                    <img src={Footer} width="100%" height="150" />
+                    </Row>
                 </Container></div>
             )
         }
@@ -230,7 +241,9 @@ class Home extends Component {
                             </Col>
                         </Col>
                     </Row>
-
+                    <Row >
+                    <img src={Footer} width="100%" height="150" />
+                    </Row>
                 </Container>
             )
         }
@@ -262,7 +275,9 @@ class Home extends Component {
                             </Col>
                         </Col>
                     </Row>
-
+                    <Row >
+                    <img src={Footer} width="100%" height="150" />
+                    </Row>
                 </Container></div>
             )
         }
