@@ -100,3 +100,20 @@
 .error {
     font-size: small;
 }
+.containerLandingT {
+    background-color: white ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.column {
+   float: left  ;
+    width: 20%;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+  }
+  .row{
+    display: flex;
+  }
