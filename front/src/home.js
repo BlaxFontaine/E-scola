@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './assets/css/components.css';
 import Img from './assets/img/png/home/banner.png'
 import Footer from './assets/img/png/home/footer.png'
-import Student from './assets/img/png/home/student.png'
-import Teacher from './assets/img/png/home/teacher.png'
-import Parents from './assets/img/png/home/parents.png'
+import Student from './assets/img/png/home/hedgehog.png'
+import Teacher from './assets/img/png/home/giraffe.png'
+import Parents from './assets/img/png/home/lama.png'
 import Login from './assets/img/png/home/login.png'
 import Register from './assets/img/png/home/register.png'
 import { LoginForm } from './components/home/loginForm'
