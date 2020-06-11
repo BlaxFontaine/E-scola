@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import '../../../assets/css/studentspace.css';
-import Art from '../../../assets/img/png/student/art.png';
-import English from '../../../assets/img/png/student/english.png';
-import Geometry from '../../../assets/img/png/student/geometry.png';
-import Maths from '../../../assets/img/png/student/maths.png';
-import Sciences from '../../../assets/img/png/student/sciences.png';
-import Write from '../../../assets/img/png/student/write.png';
+import Message1 from '../../../assets/img/png/student/exProto1.png';
+import Message2 from '../../../assets/img/png/student/exProto2.png';
+import Message3 from '../../../assets/img/png/student/exProto3.png';
+import Message4 from '../../../assets/img/png/student/exProto4.png';
+import Message5 from '../../../assets/img/png/student/exProto5.png';
+import Message6 from '../../../assets/img/png/student/exProto6.png';
 import { Container, Row, Col } from 'react-grid-system';
 
 
@@ -31,41 +31,41 @@ export class MessagesList extends Component {
         // if (this.state.whichSpace === "") {
         return (
 
-<div>
+            <div>
                 <Row>
                     Mes messages
                     </Row>
                 <Row>
-                    <button >
-                        Message 1
-                </button>
+                    <button>
+                        <img width="600" src={Message1} alt="Message 1" />
+                    </button>
                 </Row>
                 <Row>
-                    <button >
-                        Message 2
-                         </button>
+                <button>
+                        <img width="600" src={Message2} alt="Message 2" />
+                    </button>
                 </Row>
                 <Row>
-                    <button >
-                        Message 3
-                        </button>
+                <button>
+                        <img width="600" src={Message3} alt="Message 3" />
+                    </button>
                 </Row>
                 <Row>
-                    <button >
-                        Message 4
-                        </button>
+                <button>
+                        <img width="600" src={Message4} alt="Message 4" />
+                    </button>
                 </Row>
                 <Row>
-                    <button >
-                        Message 5
-                        </button>
+                <button>
+                        <img width="600" src={Message5} alt="Message 5" />
+                    </button>
                 </Row>
                 <Row>
-                    <button >
-                        Message 6
-                        </button>
+                <button>
+                        <img width="600" src={Message1} alt="Message 6" />
+                    </button>
                 </Row>
-                </div>
+            </div>
 
         )
     }
