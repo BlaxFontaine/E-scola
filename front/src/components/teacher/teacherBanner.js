@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../../assets/css/components.css';
 import Rhino from '../../assets/img/png/teacher/icons/rhinoceros.png'
-import { Container, Row, Col } from 'react-grid-system';
+import { Container, Row, Col } from 'react-bootstrap';
 import Avatar from 'react-avatar';
 import axios from 'axios';
 
@@ -25,26 +25,33 @@ export default class TeacherBanner extends Component {
     
     render() {
         return (
-
-            <Container fluid className="containerLandingT">
-                <Row style={ { backgroundColor : 'black' }} align="center" height ={200}>
-                <Col justify="center" width={100} height ={100} style={{padding:'20px'}} >
-                    <Avatar src = {Rhino} size="70" round={true} />
-                </Col>
-                <Col justify="center" align="center" style={{color : 'white'}} width={200}>
-                    Prénom Nom
-                </Col>
+            
+                <div className='row' style={ { padding:'0px', margin:'0px' }} >
+                <div className='column'style={{ paddingBottom:'10px' }} >
                 <br/>
-                <Col justify="center" align="center" style={{color : 'white'}} width={200}>
-                   <div className ='Info'>{this.state.dateObj.toLocaleDateString()}</div> 
-                </Col>
-                <Col justify="center" align="center" style={{color : 'white'}} width={200}>
-                
+                   colonne en plus
+                <br/>
+                <br/>
+                </div>
+                <div className='column' >
+                    <Avatar src = {Rhino} size="70" round={true} />
+                </div>
+                <div className='column' style={{ paddingBottom:'10px' , color: 'white'}}>
+                    <br/>
+                    Prénom Nom
+                    <br/>
+                    <br/>
+                </div>
+                <div className='column'  style={{ paddingBottom:'10px' ,color: 'white'}}>
+                   <br/>
+                   <div className ='Info'>{this.state.dateObj.toLocaleDateString()}</div>
+                   <br/> 
+                </div>
+                <div className='column'>
                 <Avatar src = {'http://openweathermap.org/img/wn/'+this.state.meteo+'@2x.png'} size="70" round={true} />
-                
-                </Col>
-                </Row>
-            </Container>
+                </div>
+                </div>
+           
         );
     }
 }
