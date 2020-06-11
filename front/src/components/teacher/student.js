@@ -19,7 +19,7 @@ export default class Student extends Component {
         return (
             <Card>
                 <Card.Body>
-                    <Card.Title>{this.props.firstname}</Card.Title>
+                    <Card.Title>{this.props.firstname} {this.props.lastname}</Card.Title>
                     <Button variant="primary" onClick={this.onEdit}><i className="fab fa-qq"></i>   Edit</Button>
                 </Card.Body>
             </Card>

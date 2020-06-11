@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Student from './Student';
+import Student from './student';
 
 export default class StudentList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      students: [{firsname: "Beyoncé", lastname: "knowles"}, {firstname: "Aya", lastname: "Nakamura"}]
+      students: [{firstname: "Beyoncé", lastname: "Knowles"}, {firstname: "Aya", lastname: "Nakamura"}]
     }
   }
 
