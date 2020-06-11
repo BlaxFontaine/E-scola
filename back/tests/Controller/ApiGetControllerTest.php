@@ -121,4 +121,13 @@ class ApiGetControllerTest extends WebTestCase
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
+
+    public function testGetMessages()
+    {
+        $client = static::createClient();
+
+        $client->request('GET', '/api/get/messages');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+    }
 }

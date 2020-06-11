@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Doctrine\ORM\EntityRepository;
 use App\Repository\MascotRepository;
+use App\Repository\MessagesRepository;
 use App\Repository\ClassesRepository;
 use App\Repository\LessonsRepository;
 use App\Repository\StudentsRepository;
@@ -20,6 +21,22 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class ApiGetController 
 {
+
+    /**
+     * @Route("/api/get/messages", name="api_get_messages")
+    */
+    public function getMessages(MascotRepository $messagesRepository, NormalizerInterface $Normalizer)
+    {
+        $get = $messagesRepository->findAll();
+        $object = $Normalizer->normalize($get, null, ['groups' => 'mascot']);
+        $json = json_encode($object);
+        $response = new Response($json, 200, [
+                'content-type' => 'application/json',
+                'Access-Control-Allow-Origin','*'
+            ]);
+        return $response;
+    } 
+
     /**
      * @Route("/api/get/mascot", name="api_get_mascot")
     */
