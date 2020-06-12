@@ -116,7 +116,7 @@ export class RegisterForm extends React.Component {
             <Form>
               <Form.Row>
                 <Form.Group as={Col} controlId="firstname">
-                  <Form.Label>Firstname</Form.Label>
+                  <Form.Label>Prénom    </Form.Label>
                   <i className="error" >
                     {errorfirst}
                   </i>
@@ -127,8 +127,10 @@ export class RegisterForm extends React.Component {
                     type="text"
                     placeholder="prénom" />
                 </Form.Group>
+                </Form.Row>
+                <Form.Row>
                 <Form.Group as={Col} controlId="lastname">
-                  <Form.Label>Lastname</Form.Label>
+                  <Form.Label>Nom    </Form.Label>
                   <i className="error">
                     {errorlast}
                   </i>

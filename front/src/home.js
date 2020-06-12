@@ -126,7 +126,7 @@ class Home extends Component {
                             </Col>
                             <Col xl={4} className="Col2center">
 
-                                <Row justify="center">Login</Row>
+                                <Row justify="center">Connexion</Row>
                                 <div><LoginForm /></div>
                             </Col>
                             <Col xl={4} className="Col2right">
@@ -160,7 +160,7 @@ class Home extends Component {
                             </Col>
                             <Col xl={4} className="Col2center">
 
-                                <Row justify="center">Login</Row>
+                                <Row justify="center">Connexion</Row>
                                 <div><LoginForm /></div>
                             </Col>
                             <Col xl={4} className="Col2right">
@@ -194,7 +194,7 @@ class Home extends Component {
                             </Col>
                             <Col xl={4} className="Col2center">
 
-                                <Row justify="center">Login</Row>
+                                <Row justify="center">Connexion</Row>
                                 <div><LoginForm /></div>
                             </Col>
                             <Col xl={4} className="Col2right">

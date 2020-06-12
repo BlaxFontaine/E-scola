@@ -54,7 +54,7 @@ export class LoginForm extends React.Component {
       <div className="Login">
         <Card className="CardL">
         <FormGroup controlId="email" bsSize="large">
-          <FormLabel>Email</FormLabel>
+          <FormLabel>E-mail</FormLabel>
         <i className="error" >
         {erroremail}
                   </i>
