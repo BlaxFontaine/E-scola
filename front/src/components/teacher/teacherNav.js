@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import StudentList from './studentList';
 import MessageList from './messageList';
 import Lesson from './lesson';
+import Assignment from './assignment';
 
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
@@ -39,6 +40,8 @@ export default class TeacherNav extends Component {
             return < MessageList />
         }   else if (this.state.selected == "lessons") {
             return < Lesson />
+        }   else if (this.state.selected == "assignments") {
+            return < Assignment />
         }
             else {
             return (
