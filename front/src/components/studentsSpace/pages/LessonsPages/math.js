@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../../../../assets/css/studentspace.css';
-import { Container, Row, Col } from 'react-grid-system';
-
+// import { Container, Row, Col } from 'react-grid-system';
+import { Container, Row, Col, Image} from 'react-bootstrap';
+import Math from '../../../../assets/img/jpg/math.jpg';
 
 export class LessonsMath extends Component {
 
@@ -26,14 +27,15 @@ export class LessonsMath extends Component {
         return (
 
 
-            <div>
+            <Container>
 
                 <Row>
-                    Page de leçons Maths
-                   </Row>
-                
-
-            </div>
+                    Leçon Maths n°1
+                </Row>
+                <Row>
+                    <Image src={Math} rounded />
+                </Row>
+            </Container>
         )
     }
     // }
