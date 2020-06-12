@@ -3,6 +3,7 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 import styled from 'styled-components';
 import StudentList from './studentList';
 import MessageList from './messageList';
+import Lesson from './lesson';
 
 // Be sure to include styles at some point, probably during your bootstraping
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
@@ -36,7 +37,10 @@ export default class TeacherNav extends Component {
             return < StudentList />
         } else if (this.state.selected == "messages") {
             return < MessageList />
-        } else {
+        }   else if (this.state.selected == "lessons") {
+            return < Lesson />
+        }
+            else {
             return (
                 <div>
                     <h1>{selected}</h1>  
